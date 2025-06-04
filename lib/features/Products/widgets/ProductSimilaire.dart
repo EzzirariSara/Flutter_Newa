@@ -56,7 +56,6 @@ class Productsimilaire extends StatelessWidget {
           children: [
             Stack(
               children: [
-                // Image cliquable
                 GestureDetector(
                   onTap: navigateToProductDetail,
                   child: ClipRRect(
@@ -72,7 +71,6 @@ class Productsimilaire extends StatelessWidget {
                     ),
                   ),
                 ),
-                // Bouton d'ajout
                 Positioned(
                   right: 0,
                   bottom: 8,

@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/features/Products/pages/ProductGridHorizantale.dart';
+import 'package:flutter_application_1/features/Search/Pages/ImageSearchResultPage.dart';
+import 'package:flutter_application_1/features/Search/Pages/SearchPage.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_application_1/config/theme/Colors.dart';
 import 'package:flutter_application_1/features/Search/Widgets/SearchScr.dart';
@@ -16,7 +18,6 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
   final ImagePicker _picker = ImagePicker();
   File? _selectedImage;
   List<String> _searchHistory = []; 
-
   final List<Map<String, dynamic>> _products = [
     {
       'brand': 'CERAVE',
@@ -42,26 +43,25 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
   ];
 
   void _openSearchPage() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) => Searchscr(
-          searchHistory: _searchHistory,
-          products: _products,
-        ),
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (_) => Searchscr(
+        searchHistory: _searchHistory,
+        products: _products,
       ),
-    );
-  }
+    ),
+  );
+}
+
 
   Future<void> _pickImage() async {
     try {
       final XFile? pickedFile = await _picker.pickImage(source: ImageSource.camera);
-
       if (pickedFile != null) {
         setState(() {
           _selectedImage = File(pickedFile.path);
         });
-
         _performImageSearch();
       }
     } catch (e) {
@@ -72,20 +72,21 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
   }
 
   void _performImageSearch() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) => ProductGridHorizontal(
-          categoryName: 'Résultats de recherche par image',
-          products: _products, 
-        ),
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (_) => ImageSearchResultPage(
+        products: _products,
       ),
-    );
+    ),
+  );
+  setState(() {
+    _selectedImage = null;
+  });
+}
 
-    setState(() {
-      _selectedImage = null;
-    });
-  }
+
+
 
   @override
   Widget build(BuildContext context) {

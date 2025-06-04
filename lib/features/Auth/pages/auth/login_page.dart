@@ -32,7 +32,6 @@ class _LoginPageState extends State<LoginPage> {
         _isLoading = true;
       });
 
-      // Simulation d'un délai de connexion (optionnel)
       await Future.delayed(const Duration(seconds: 1));
 
       setState(() {
@@ -48,7 +47,6 @@ class _LoginPageState extends State<LoginPage> {
           ),
         );
         
-        // Navigation vers Authprofilepage - TOUJOURS
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => const Authprofilepage()),

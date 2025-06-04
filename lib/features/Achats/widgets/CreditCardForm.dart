@@ -53,7 +53,6 @@ class CreditCardForm extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         child: Stack(
           children: [
-            // Éléments décoratifs de la carte
             Positioned(
               top: -50,
               right: -50,

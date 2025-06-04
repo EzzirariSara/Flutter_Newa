@@ -17,17 +17,6 @@ class Promotionstitle extends StatelessWidget {
               color: Color(0xFF243B6A),
             ),
           ),
-          // const Spacer(),
-          // TextButton(
-          //   onPressed: () {
-          //   },
-          //   child: Text(
-          //     "Voir tout",
-          //     style: TextStyle(
-          //       color: Colors.blue[700],
-          //     ),
-          //   ),
-          // ),
         ],
       ),
     );

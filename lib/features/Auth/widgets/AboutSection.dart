@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/features/Auth/Controllers/auth_controller.dart';
+import 'package:flutter_application_1/features/Auth/pages/About/AboutPage.dart';
+import 'package:flutter_application_1/features/Auth/pages/About/PrivacyPolicySheet.dart';
+import 'package:flutter_application_1/features/Auth/pages/About/TermsAndConditionsPage.dart';
 import 'package:flutter_application_1/features/Auth/pages/auth/login_page.dart';
 import 'package:flutter_application_1/features/Auth/widgets/InfoItem.dart';
 import 'package:provider/provider.dart';
-
 class Aboutsection extends StatelessWidget {
   const Aboutsection({super.key});
 
@@ -19,6 +21,7 @@ class Aboutsection extends StatelessWidget {
       );
     }
 
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -29,35 +32,49 @@ class Aboutsection extends StatelessWidget {
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
         ),
-        InfoItem(
-          icon: Icons.info_outline,
-          title: 'À propos de l\'application',
-          onTap: () {},
-        ),
+InfoItem(
+  icon: Icons.info_outline,
+  title: 'À propos de l\'application',
+  onTap: () => showAboutModal(context),
+
+),
         const Divider(height: 1, indent: 20, endIndent: 20),
-        InfoItem(
+  
+  InfoItem(
           icon: Icons.share_outlined,
           title: 'Partager l\'application',
-          onTap: () {},
+          onTap: () {
+          },
         ),
         const Divider(height: 1, indent: 20, endIndent: 20),
+
         InfoItem(
-          icon: Icons.info_outline,
-          title: 'Conditions générales d\'utilisation',
-          onTap: () {},
-        ),
+  icon: Icons.info_outline,
+  title: 'Conditions générales d\'utilisation',
+  onTap: () => TermsAndConditionsSheet(context),
+  
+),
+
+
+
         const Divider(height: 1, indent: 20, endIndent: 20),
         InfoItem(
           icon: Icons.lock_outline,
           title: 'Politique de confidentialité',
-          onTap: () {},
+          onTap: () => PrivacyPolicySheet(context),
         ),
         const Divider(height: 1, indent: 20, endIndent: 20),
         InfoItem(
           icon: Icons.power_settings_new,
           title: 'Déconnexion',
-          onTap: _logout,
+          onTap: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const LoginPage()),
+            );
+          },
         ),
+
       ],
     );
   }

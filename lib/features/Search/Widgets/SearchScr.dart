@@ -20,7 +20,6 @@ class _SearchscrState extends State<Searchscr> {
   final TextEditingController _searchController = TextEditingController();
   String _query = '';
 
-  // Filter variables
   double _minPriceFilter = 0;
   double _maxPriceFilter = 1000;
   List<String> _selectedBrands = [];
@@ -106,37 +105,41 @@ class _SearchscrState extends State<Searchscr> {
     }).toList();
 
     return Scaffold(
-      backgroundColor: Colors.white ,
-      appBar: AppBar(
-        title: TextField(
-          controller: _searchController,
-          autofocus: true,
-          decoration: InputDecoration(
-            hintText: 'Recherchez un produit, une marque...',
-            hintStyle: const TextStyle(color: Colors.white70),
-            border: InputBorder.none,
-            suffixIcon: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                IconButton(
-                  icon: const Icon(Icons.clear, color: Colors.white),
-                  onPressed: _clearSearch,
-                ),
-              ],
+  backgroundColor: Colors.white,
+  appBar: AppBar(
+    leading: IconButton(
+      icon: const Icon(Icons.arrow_back, color: Colors.white),
+      onPressed: () => Navigator.of(context).pop(),
+    ),
+    title: TextField(
+      controller: _searchController,
+      autofocus: true,
+      decoration: InputDecoration(
+        hintText: 'Recherchez un produit, une marque...',
+        hintStyle: const TextStyle(color: Colors.white70),
+        border: InputBorder.none,
+        suffixIcon: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(
+              icon: const Icon(Icons.clear, color: Colors.white),
+              onPressed: _clearSearch,
             ),
-          ),
-          style: const TextStyle(color: Colors.white),
-          onSubmitted: _performSearch,
+          ],
         ),
-        backgroundColor: AppColors.deepBlue,
       ),
-      body: _query.isEmpty
-          ? _buildSearchHistory()
-          : Searchpage(
-            
-              products: filteredProducts,
-            ),
-    );
+      style: const TextStyle(color: Colors.white),
+      onSubmitted: _performSearch,
+    ),
+    backgroundColor: AppColors.deepBlue,
+    iconTheme: const IconThemeData(color: Colors.white), 
+  ),
+  body: _query.isEmpty
+      ? _buildSearchHistory()
+      : Searchpage(
+          products: filteredProducts,
+        ),
+);
   }
 
   Widget _buildSearchHistory() {

@@ -191,37 +191,38 @@ class _ProductGridHorizontalState extends State<ProductGridHorizontal> {
 
 
 
-          if (isFilterActive)
-            Wrap(
-              spacing: 8,
-              runSpacing: 8,
-              children: [
-                if (minPrice > 0 || maxPrice < 100)
-                  _buildFilterChip(
-                    label: 'Prix: ${minPrice.toInt()}Dh - ${maxPrice.toInt()}Dh',
-                    onDelete: () => _applyFilters(min: 0, max: 100),
-                  ),
-                ...selectedBrands.map((brand) => _buildFilterChip(
-                      label: 'Marque: $brand',
-                      onDelete: () {
-                        final updated = List<String>.from(selectedBrands)..remove(brand);
-                        _applyFilters(min: minPrice, max: maxPrice, brands: updated);
-                      },
-                    )),
-                ...selectedSizes.map((size) => _buildFilterChip(
-                      label: 'Taille: $size',
-                      onDelete: () {
-                        final updated = List<String>.from(selectedSizes)..remove(size);
-                        _applyFilters(min: minPrice, max: maxPrice, sizes: updated);
-                      },
-                    )),
-                if (selectedRating > 0)
-                  _buildFilterChip(
-                    label: 'Note: ${selectedRating.toStringAsFixed(1)}★+',
-                    onDelete: () => _applyFilters(min: minPrice, max: maxPrice, rating: 0),
-                  ),
-              ],
-            ),
+          // if (isFilterActive)
+          //   Wrap(
+          //     spacing: 8,
+          //     runSpacing: 8,
+          //     children: [
+          //       if (minPrice > 0 || maxPrice < 100)
+          //         _buildFilterChip(
+          //           label: 'Prix: ${minPrice.toInt()}Dh - ${maxPrice.toInt()}Dh',
+          //           onDelete: () => _applyFilters(min: 0, max: 100),
+          //         ),
+          //       ...selectedBrands.map((brand) => _buildFilterChip(
+          //             label: 'Marque: $brand',
+          //             onDelete: () {
+          //               final updated = List<String>.from(selectedBrands)..remove(brand);
+          //               _applyFilters(min: minPrice, max: maxPrice, brands: updated);
+          //             },
+          //           )),
+          //       ...selectedSizes.map((size) => _buildFilterChip(
+          //             label: 'Taille: $size',
+          //             onDelete: () {
+          //               final updated = List<String>.from(selectedSizes)..remove(size);
+          //               _applyFilters(min: minPrice, max: maxPrice, sizes: updated);
+          //             },
+          //           )),
+          //       if (selectedRating > 0)
+          //         _buildFilterChip(
+          //           label: 'Note: ${selectedRating.toStringAsFixed(1)}★+',
+          //           onDelete: () => _applyFilters(min: minPrice, max: maxPrice, rating: 0),
+          //         ),
+          //     ],
+          //   ),
+          
           productsToDisplay.isEmpty
               ? const Padding(
                   padding: EdgeInsets.only(top: 50),

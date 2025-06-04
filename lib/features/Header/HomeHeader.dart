@@ -3,7 +3,7 @@ import 'package:flutter_application_1/config/theme/Colors.dart';
 import 'package:flutter_application_1/core/widgets/SearchBarWidget.dart';
 import 'package:flutter_application_1/features/Notifications/pages/NotificationsPage.dart';
 import 'package:flutter_application_1/features/Products/pages/ProductCategories.dart';
-import 'package:flutter_application_1/features/home/HomePage.dart';
+import 'package:flutter_application_1/HomePage.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({super.key});

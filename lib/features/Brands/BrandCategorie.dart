@@ -3,7 +3,7 @@ import 'package:flutter_application_1/features/Achats/panierCuPage.dart';
 import 'package:flutter_application_1/features/Auth/AuthProfilePage.dart';
 import 'package:flutter_application_1/features/Brands/pages/BrandsScreen.dart';
 import 'package:flutter_application_1/features/ProductBrands/pages/ProductGrid.dart';
-import 'package:flutter_application_1/features/Products/pages/DetailHeader.dart';
+import 'package:flutter_application_1/features/Header/DetailHeader.dart';
 import 'package:flutter_application_1/NewaBottomNavBar.dart';
 import 'package:flutter_application_1/features/Promotions/PromotionsPage.dart';
 import 'package:flutter_application_1/features/categorie/Categories.dart';
@@ -54,7 +54,6 @@ class _BrandcategorieState extends State<Brandcategorie> {
               child: Column(
                 children: [
                   DetailHeader(),
-                  // const SizedBox(height: 8),
                   BrandsScreen(
                     subcategoryName: widget.subcategoryName,
                     subcategoryImage: widget.subcategoryImage,
@@ -67,63 +66,63 @@ class _BrandcategorieState extends State<Brandcategorie> {
                         "productName": "PAYOT Crème",
                         "imagePath": "assets/Products/Product4.png",
                         "price": 35.0,
-                        'originalPrice': 35.0,
+                        "type": 'Shampoo',
                       },
                       {
                         'brand': 'CERAVE',
                         "productName": "ANIAN Lotion",
                         "imagePath": "assets/Products/Product5.png",
                         "price": 15.0,
-                        'originalPrice': 35.0,
+                        "type": 'Shampoo',
                       },
                       {
                         'brand': 'CERAVE',
                         "productName": "PAYOT Crème",
                         "imagePath": "assets/Products/Product6.png",
                         "price": 35.0,
-                        'originalPrice': 35.0,
+                        "type": 'Shampoo',
                       },
                       {
                         'brand': 'CERAVE',
                         "productName": "ANIAN Lotion",
                         "imagePath": "assets/Products/Product7.png",
                         "price": 15.0,
-                        'originalPrice': 35.0,
+                        "type": 'Shampoo',
                       },
                       {
                         'brand': 'CERAVE',
                         "productName": "DOLOGEL Gel Apaisant",
                         "imagePath": "assets/Products/Product1.png",
                         "price": 30.0,
-                        'originalPrice': 35.0,
+                        "type": 'Shampoo',
                       },
                       {
                         'brand': 'CERAVE',
                         "productName": "CERAVE Hydratant",
                         "imagePath": "assets/Products/Product2.png",
                         "price": 25.0,
-                        'originalPrice': 35.0,
+                        "type": 'Shampoo',
                       },
                       {
                         'brand': 'CERAVE',
                         "productName": "PHYSIODOSE Solution",
                         "imagePath": "assets/Products/Product3.png",
                         "price": 20.0,
-                        'originalPrice': 35.0,
+                        "type": 'Shampoo',
                       },
                       {
                         'brand': 'CERAVE',
                         "productName": "PAYOT Crème",
                         "imagePath": "assets/Products/Product4.png",
                         "price": 35.0,
-                        'originalPrice': 35.0,
+                        "type": 'Shampoo',
                       },
                       {
                         'brand': 'CERAVE',
                         "productName": "ANIAN Lotion",
                         "imagePath": "assets/Products/Product5.png",
                         "price": 15.0,
-                        'originalPrice': 35.0,
+                        "type": 'Shampoo',
                       },
                     ],
                   ),

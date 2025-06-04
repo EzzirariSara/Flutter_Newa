@@ -93,35 +93,36 @@ class NewaBottomNavBar extends StatelessWidget {
     onTabSelected(index);
   }
 
-  Widget _buildNavItem(
-    int index,
-    String iconPath,
-    double width,
-    double barHeight,
-    double circleDiameter,
-  ) {
-    final isSelected = selectedIndex == index;
+Widget _buildNavItem(
+  int index,
+  String iconPath,
+  double width,
+  double barHeight,
+  double circleDiameter,
+) {
+  final isSelected = selectedIndex == index;
 
-    return GestureDetector(
-      onTap: () => _onItemTapped(index),
-      child: SizedBox(
-        width: width,
-        height: barHeight,
-        child: Center(
-          child: AnimatedContainer(
-            duration: const Duration(milliseconds: 200),
-            transform:
-                isSelected
-                    ? Matrix4.translationValues(1, -14, 2)
-                    : Matrix4.identity(),
-            child: Container(
-              width: circleDiameter,
-              height: circleDiameter,
-              decoration: BoxDecoration(
-                color: isSelected ? AppColors.deepBlue : Colors.transparent,
-                shape: BoxShape.circle,
-              ),
-              child: Center(
+  return GestureDetector(
+    onTap: () => _onItemTapped(index),
+    child: SizedBox(
+      width: width,
+      height: barHeight,
+      child: Center(
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          transform: isSelected
+              ? Matrix4.translationValues(0, -14, 0) 
+              : Matrix4.identity(),
+          child: Container(
+            width: circleDiameter,
+            height: circleDiameter,
+            decoration: BoxDecoration(
+              color: isSelected ? AppColors.deepBlue : Colors.transparent,
+              shape: BoxShape.circle,
+            ),
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(5.0), 
                 child: Image.asset(
                   iconPath,
                   width: 24,
@@ -133,37 +134,39 @@ class NewaBottomNavBar extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 
-  Widget _buildLogoItem(
-    String logoPath,
-    double width,
-    double barHeight,
-    double circleDiameter,
-  ) {
-    final isSelected = selectedIndex == 2;
+Widget _buildLogoItem(
+  String logoPath,
+  double width,
+  double barHeight,
+  double circleDiameter,
+) {
+  final isSelected = selectedIndex == 2;
 
-    return GestureDetector(
-      onTap: () => _onItemTapped(2),
-      child: SizedBox(
-        width: width,
-        height: barHeight,
-        child: Center(
-          child: AnimatedContainer(
-            duration: const Duration(milliseconds: 200),
-            transform:
-                isSelected
-                    ? Matrix4.translationValues(1, -14, 2)
-                    : Matrix4.identity(),
-            child: Container(
-              width: circleDiameter,
-              height: circleDiameter,
-              decoration: BoxDecoration(
-                color: isSelected ? AppColors.deepBlue : Colors.white,
-                shape: BoxShape.circle,
-              ),
-              child: Center(
+  return GestureDetector(
+    onTap: () => _onItemTapped(2),
+    child: SizedBox(
+      width: width,
+      height: barHeight,
+      child: Center(
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          transform: isSelected
+              ? Matrix4.translationValues(0, -14, 0) 
+              : Matrix4.identity(),
+          child: Container(
+            width: circleDiameter,
+            height: circleDiameter,
+            decoration: BoxDecoration(
+              color: isSelected ? AppColors.deepBlue : Colors.white,
+              shape: BoxShape.circle,
+            ),
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(5.0), 
                 child: Image.asset(
                   logoPath,
                   width: 30,
@@ -175,8 +178,9 @@ class NewaBottomNavBar extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 }
 
 class NotchedBarPainter extends CustomPainter {

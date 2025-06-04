@@ -1,28 +1,3 @@
-// import 'package:flutter/material.dart';
-
-// class BannerAd extends StatelessWidget {
-//   final String imagePath;
-
-//   const BannerAd({Key? key, required this.imagePath}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Padding(
-//       padding: const EdgeInsets.symmetric(horizontal: 10),
-//       child: Container(
-//         height: 100,
-//         decoration: BoxDecoration(
-//           borderRadius: BorderRadius.circular(12),
-//           image: DecorationImage(
-//             image: AssetImage(imagePath),
-//             fit: BoxFit.cover,
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
 import 'dart:async';
 

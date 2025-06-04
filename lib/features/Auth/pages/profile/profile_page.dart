@@ -108,10 +108,6 @@ class _ProfilePageState extends State<ProfilePage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        // leading: IconButton(
-        //   icon: const Icon(Icons.arrow_back, color: Colors.black),
-        //   onPressed: () => Navigator.of(context).pop(),
-        // ),
         centerTitle: true,
         title: const Text(
           'Mon compte',
@@ -157,7 +153,7 @@ class _ProfilePageState extends State<ProfilePage> {
             const SizedBox(height: 30),
             SocialSection(),
             const SizedBox(height: 20),
-            Versioninfo(),
+            // Versioninfo(),
           ],
         ),
       ),

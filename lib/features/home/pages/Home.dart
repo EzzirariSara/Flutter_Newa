@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/features/home/pages/BrandsPage.dart';
 import 'package:flutter_application_1/features/home/widgets/BannerAd.dart';
-import 'package:flutter_application_1/features/home/widgets/HomeHeader.dart';
+import 'package:flutter_application_1/features/Header/HomeHeader.dart';
 import 'package:flutter_application_1/features/home/pages/ProductsPage.dart';
 import 'package:flutter_application_1/model/Products.dart';
 

@@ -48,18 +48,6 @@ class ProductSimilPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              // TextButton(
-              //   onPressed: () {
-                 
-              //   },
-              //   child: const Text(
-              //     'Voir plus',
-              //     style: TextStyle(
-              //       color: Colors.grey,
-              //       fontSize: 14,
-              //     ),
-              //   ),
-              // ),
             ],
           ),
         ),

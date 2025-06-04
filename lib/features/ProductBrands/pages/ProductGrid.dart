@@ -223,73 +223,6 @@ class _ProductGridState extends State<ProductGrid> {
               ],
             ),
           ),
-
-          if (isFilterActive)
-            Padding(
-              padding: const EdgeInsets.only(bottom: 12),
-              child: Wrap(
-                spacing: 8,
-                runSpacing: 8,
-                children: [
-                  if (minPrice > 0 || maxPrice < 100)
-                    _buildFilterChip(
-                      label: 'Prix: ${minPrice.toInt()}Dh - ${maxPrice.toInt()}Dh',
-                      onDelete: () {
-                        _applyFilters(
-                          min: 0, 
-                          max: 100,
-                          brands: selectedBrands,
-                          sizes: selectedSizes,
-                          rating: selectedRating
-                        );
-                      },
-                    ),
-                  
-                  ...selectedBrands.map((brand) => _buildFilterChip(
-                    label: 'Marque: $brand',
-                    onDelete: () {
-                      final updatedBrands = List<String>.from(selectedBrands)..remove(brand);
-                      _applyFilters(
-                        min: minPrice, 
-                        max: maxPrice,
-                        brands: updatedBrands,
-                        sizes: selectedSizes,
-                        rating: selectedRating
-                      );
-                    },
-                  )),
-                  
-                  ...selectedSizes.map((size) => _buildFilterChip(
-                    label: 'Taille: $size',
-                    onDelete: () {
-                      final updatedSizes = List<String>.from(selectedSizes)..remove(size);
-                      _applyFilters(
-                        min: minPrice, 
-                        max: maxPrice,
-                        brands: selectedBrands,
-                        sizes: updatedSizes,
-                        rating: selectedRating
-                      );
-                    },
-                  )),
-                  
-                  if (selectedRating > 0)
-                    _buildFilterChip(
-                      label: 'Note: ${selectedRating.toStringAsFixed(1)}★+',
-                      onDelete: () {
-                        _applyFilters(
-                          min: minPrice, 
-                          max: maxPrice,
-                          brands: selectedBrands,
-                          sizes: selectedSizes,
-                          rating: 0
-                        );
-                      },
-                    ),
-                ],
-              ),
-            ),
-
           displayProducts.isEmpty
               ? Center(
                 child: Padding(
@@ -337,27 +270,27 @@ class _ProductGridState extends State<ProductGrid> {
     );
   }
   
-  Widget _buildFilterChip({required String label, required VoidCallback onDelete}) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      decoration: BoxDecoration(
-        color: Colors.grey[200],
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            label,
-            style: TextStyle(fontSize: 14, color: Colors.black87),
-          ),
-          SizedBox(width: 4),
-          GestureDetector(
-            onTap: onDelete,
-            child: Icon(Icons.close, size: 16, color: Colors.grey[600]),
-          ),
-        ],
-      ),
-    );
-  }
+  // Widget _buildFilterChip({required String label, required VoidCallback onDelete}) {
+    // return Container(
+      // padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      // decoration: BoxDecoration(
+        // color: Colors.grey[200],
+        // borderRadius: BorderRadius.circular(16),
+      // ),
+      // child: Row(
+        // mainAxisSize: MainAxisSize.min,
+        // children: [
+          // Text(
+            // label,
+            // style: TextStyle(fontSize: 14, color: Colors.black87),
+          // ),
+          // SizedBox(width: 4),
+          // GestureDetector(
+            // onTap: onDelete,
+            // child: Icon(Icons.close, size: 16, color: Colors.grey[600]),
+          // ),
+        // ],
+      // ),
+    // );
+  // }
 }

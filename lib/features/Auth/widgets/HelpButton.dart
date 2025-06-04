@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/config/theme/Colors.dart';
+import 'package:flutter_application_1/features/Auth/pages/Assistance/AssistancePage.dart';
 
 class Helpbutton extends StatelessWidget {
   const Helpbutton({super.key});
@@ -14,7 +15,14 @@ class Helpbutton extends StatelessWidget {
           border: Border.all(color: AppColors.deepBlue),
         ),
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => const AssistancePage(),
+              ),
+            );
+          },
           child: Text(
             'Besoin d\'aide ?',
             style: TextStyle(

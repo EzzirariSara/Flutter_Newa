@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/features/Achats/panierCuPage.dart';
 import 'package:flutter_application_1/features/Auth/AuthProfilePage.dart';
 import 'package:flutter_application_1/features/ProductBrands/pages/ProductGrid.dart';
-import 'package:flutter_application_1/features/Products/pages/DetailHeader.dart';
+import 'package:flutter_application_1/features/Header/DetailHeader.dart';
 import 'package:flutter_application_1/NewaBottomNavBar.dart';
 import 'package:flutter_application_1/features/Promotions/PromotionsPage.dart';
 import 'package:flutter_application_1/features/categorie/Categories.dart';
@@ -119,14 +119,10 @@ class _ProductsbrandState extends State<Productsbrand> {
                   color: Color(0xFF243B6A),
                 ),
               ),
-              // SizedBox(height: 2),
             ],
           ),
         ),
         
-        // Divider(height: 1, thickness: 1, color: Colors.grey[200]),
-        
-        // ProductGrid(products: products),
         ProductGrid(
           products: [
             {

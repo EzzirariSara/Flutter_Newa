@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/config/theme/Colors.dart';
-import 'package:flutter_application_1/features/home/HomePage.dart';
+import 'package:flutter_application_1/HomePage.dart';
 
 class AddToCartBottomSheet extends StatelessWidget {
   final String imagePath;

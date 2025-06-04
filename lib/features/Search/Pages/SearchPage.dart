@@ -59,32 +59,36 @@ class _SearchpageState extends State<Searchpage> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ProductFilterBar(
-          isFilterActive: isFilterActive,
-          onClearFilter: _resetFilters,
-          onOpenFilter: () => _showFilterSheet(context),
-        ),
-        Expanded(
-          child: filteredProducts.isEmpty
-              ? const Center(child: Text('Aucun produit trouvé'))
-              : ListView.builder(
-                  itemCount: filteredProducts.length,
-                  itemBuilder: (context, index) {
-                    final product = filteredProducts[index];
-                    return Productcardhorizantale(
-                      brand: product['brand'],
-                      imagePath: product['imagePath'],
-                      productName: product['productName'],
-                      price: product['price'].toString(),
-                      originalPrice: product['originalPrice'].toString(),
-                    );
-                  },
-                ),
-        ),
-      ],
-    );
+    return Container(
+  color: Colors.white,
+  child: Column(
+    children: [
+      ProductFilterBar(
+        isFilterActive: isFilterActive,
+        onClearFilter: _resetFilters,
+        onOpenFilter: () => _showFilterSheet(context),
+      ),
+      Expanded(
+        child: filteredProducts.isEmpty
+            ? const Center(child: Text('Aucun produit trouvé'))
+            : ListView.builder(
+                itemCount: filteredProducts.length,
+                itemBuilder: (context, index) {
+                  final product = filteredProducts[index];
+                  return Productcardhorizantale(
+                    brand: product['brand'],
+                    imagePath: product['imagePath'],
+                    productName: product['productName'],
+                    price: product['price'].toString(),
+                    originalPrice: product['originalPrice'].toString(),
+                  );
+                },
+              ),
+      ),
+    ],
+  ),
+);
+
   }
 
   void _showFilterSheet(BuildContext context) {

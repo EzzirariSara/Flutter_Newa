@@ -4,7 +4,7 @@ import 'package:flutter_application_1/features/Notifications/widgets/EmptyNotifi
 import 'package:flutter_application_1/features/Notifications/widgets/NotificationCard.dart';
 import 'package:flutter_application_1/features/Notifications/widgets/NotificationItem.dart';
 import 'package:flutter_application_1/features/Promotions/PromotionsPage.dart';
-import 'package:flutter_application_1/features/home/HomePage.dart'; 
+import 'package:flutter_application_1/HomePage.dart'; 
 
 class NotificationPage extends StatefulWidget {
   const NotificationPage({Key? key}) : super(key: key);

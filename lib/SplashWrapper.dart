@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/FirstPage.dart';
-import 'package:flutter_application_1/features/home/HomePage.dart';
+import 'package:flutter_application_1/HomePage.dart';
 
 class SplashWrapper extends StatefulWidget {
   @override
